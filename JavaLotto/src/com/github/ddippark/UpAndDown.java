@@ -6,7 +6,7 @@ import java.util.*;
 
 
 public class UpAndDown {
-    public static void 1main(String[] args) {
+    public static void main(String[] args) {
 
         Scanner s = new Scanner(System.in); // 문제맞추기를 시도하는 숫자
         Scanner m = new Scanner(System.in); // 정해진 숫자
@@ -67,10 +67,10 @@ public class UpAndDown {
 	      System.out.println("한 게임 더 할까요?(Y/N)");
 //int result =m.nextInt()
 	      check = c.next().charAt(0);
-	      if(check=='Y'){
+	      if(check=='Y' || check=='y'){
 	        continue;
 	      }
-	      else if(check =='N')
+	      else if(check =='N' || check=='n')
 	      {
 	    	  System.out.println("안녕히 가세요~");
 	    	  break;

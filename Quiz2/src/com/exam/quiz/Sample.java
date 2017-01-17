@@ -10,7 +10,7 @@ public class Sample {
 		do{
 			System.out.println("숫자를 입력하세요");
 			String select = scanner.nextLine();
-			if (select.equals("1")) {
+			if (select.equals("1")) {               
 				start1 = 1; start2=4; inc1=1; inc2= 1; char1='*'; char2=' ';
 			} else if (select.equals("2")) {
 				start1=4; start2=1; inc1=1; inc2=1; char1=' '; char2='*';

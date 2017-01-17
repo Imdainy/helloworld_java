@@ -1,34 +1,38 @@
 package com.github.ddippark;
 
-import java.util.*;
-import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
- 
-public class Lotto {
+import java.util.*;
+
+public class LLoto {
 	 public static void main(String[] args) {
 	        Scanner insert_number = new Scanner(System.in); // 문제맞추기를 시도하는 숫자
-	        int[] my_game = new int[2];
+	        int[] my_game = new int[3];
 	        my_game[0]=1;
-	       
-	        // 
-	        Random random = new Random();
-	        int num = random.nextInt(1000);
-	        System.out.println(num);
-	       // 
 	        
 	    while(true)
 	    {
-	    	System.out.println("┌──────────────┐");
-	    	System.out.println("│UP & DOWN GAME│");
-	    	System.out.println("└──────────────┘");
-	        my_game[1]=0;
+	    	System.out.println("     ┌──────────────┐");
+	    	System.out.println("     │UP & DOWN GAME│");
+	    	System.out.println("     └──────────────┘");
+	        System.out.println("───────★NEW GAME★───────");
+	        System.out.print("        ");
 	        System.out.println(my_game[0] + "번째 게임");
+	        System.out.println("──────────────────────────");
+	        System.out.print("남은 목숨 : ");
+	        my_game[2]=5;
+			 for(int i=0; i<my_game[2];i++)
+			 {
+				 System.out.print("*");
+			 }
+			 System.out.println();
+	        my_game[1]=1;
 	        int my_number = 0;
 	        char check;
 	        int ans_number =(int) (Math.random()*50)+1;
 	        //System.out.println("당신이 입력한 숫자는 "+input);
 	        System.out.println("화면에 문제를 맞출 숫자를 입력하세요.");
+			System.out.println(my_game[1]+"번째 시도중입니다");
+			
 	        while(my_number!=ans_number )
 	        {
 	             my_number = insert_number.nextInt(); //입력받기
@@ -44,6 +48,15 @@ public class Lotto {
 	            		 System.out.println("UP!!!!");
 	            		 System.out.println("화면에 숫자를 한 번 더 입력하세요.");
 	            		 my_game[1] = my_game[1]+1;
+	            		 my_game[2] = my_game[2]-1;
+	            		 System.out.println(my_game[1]+"번째 시도중입니다");
+	            		 System.out.print("남은 목숨 : ");
+	            		 for(int i=0; i<my_game[2];i++)
+	            		 {
+	            			 System.out.print("*");
+	            		 }
+	            		 System.out.println();
+
 	            		 break;    
 	            	 }
 	            	 else if(my_number>ans_number)
@@ -51,14 +64,23 @@ public class Lotto {
 	            		 System.out.println("DOWN!!!!"); 
 	            		 System.out.println("화면에 숫자를 한 번 더 입력하세요.");
 	            		 my_game[1] = my_game[1]+1;
+	            		 my_game[2] = my_game[2]-1;
+	            		 System.out.print("남은 목숨 : ");
+	            		 for(int i=0; i<my_game[2];i++)
+	            		 {
+	            			 System.out.print("*");
+	            		 }
+	            		 System.out.println();
 	            		 break;
 	            	 }
 	            	 else if(my_number == ans_number)
 	            	 {
 	            		 break;
-	            	 }
+	            	 }            	 
 	             }
+
 	        }
+
 	    
 		      System.out.println("정답입니다!!!");
 		      System.out.println(my_game[1]+"번만에 맞췄습니다");
